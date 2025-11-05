@@ -13,39 +13,53 @@
         padding: 0;
         color: #156733;
         line-height: 1.8;
+        position: relative;
     }
+    
+    /* ===== الخلفية الشفافة مع الشعار ===== */
+    body::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('https://i.postimg.cc/Lhdfcttc/IMG-7700.jpg');
+        background-size: 350px;
+        background-repeat: no-repeat;
+        background-position: center;
+        opacity: 0.11;
+        z-index: -1;
+    }
+
     header {
         background: #1e7f3d;
-        padding: 15px;
+        padding: 18px;
         text-align: center;
         color: white;
         font-size: 24px;
         font-weight: bold;
-        position: relative;
     }
-    .logo {
-        width: 75px;
-        position: absolute;
-        right: 10px;
-        top: 10px;
-        border-radius: 6px;
-    }
+
     .container {
         padding: 20px;
     }
+
     .box {
-        background: white;
+        background: rgba(255,255,255,.9);
         border-radius: 10px;
         padding: 20px;
         margin-bottom: 15px;
         box-shadow: 0 4px 10px rgba(0,0,0,.12);
     }
+
     .title {
         font-size: 22px;
         margin-bottom: 10px;
         font-weight: bold;
         color: #1e7f3d;
     }
+
     .example-card {
         background: #f6fff6;
         padding: 10px;
@@ -53,20 +67,40 @@
         border-radius: 6px;
         margin: 6px 0;
     }
+
     table {
         width: 100%;
         border-collapse: collapse;
         margin-top: 10px;
     }
+
     th, td {
         border: 1px solid #b8e6c5;
         padding: 10px;
         text-align: center;
         background: white;
     }
+
     th {
         background: #1e7f3d;
         color: white;
+    }
+
+    /* مربع الفيديو */
+    .video-box {
+        background: rgba(255,255,255, .95);
+        padding: 15px;
+        border-radius: 10px;
+        margin-bottom: 20px;
+        box-shadow: 0 4px 10px rgba(0,0,0,.12);
+        text-align: center;
+    }
+
+    iframe {
+        width: 100%;
+        height: 250px;
+        border-radius: 10px;
+        border: none;
     }
 </style>
 </head>
@@ -75,10 +109,15 @@
 
 <header>
     شرح اسم الفاعل واسم المفعول
-    <img src="https://i.postimg.cc/Lhdfcttc/IMG-7700.jpg" class="logo">
 </header>
 
 <div class="container">
+
+<!-- 🎬 مشغل اليوتيوب -->
+<div class="video-box">
+    <div class="title">🎥 شرح الدرس من قناة عين</div>
+    <iframe src="https://www.youtube.com/embed/DKd6CWU5Crc" allowfullscreen></iframe>
+</div>
 
 <div class="box">
     <div class="title">🔵 تعريف اسم الفاعل</div>
@@ -118,7 +157,7 @@
         <tr><th>اسم الفاعل</th><th>اسم المفعول</th></tr>
         <tr><td>من قام بالفعل</td><td>من وقع عليه الفعل</td></tr>
         <tr><td>وزنه فاعل</td><td>وزنه مفعول</td></tr>
-        <tr><td>كاتب، دارس</td><td>مكتوب، محفوظ</td></tr>
+        <tr><td>كاتب — دارس</td><td>مكتوب — محفوظ</td></tr>
     </table>
 </div>
 
